@@ -7,6 +7,7 @@ from django.core.files.storage import FileSystemStorage
 from .forms import ImageUploadForm
 from django.conf import settings
 from .cv_utils.opencv_dface import opencv_dface
+from .cv_utils.opencv_thermal import opencv_thermal
 from .models import ImageUploadModel
 
 def first_view(request):
@@ -61,7 +62,7 @@ def moon_dust(request):
                     obs.delete()
 
             imageURL = settings.MEDIA_URL + form.instance.document.name
-            opencv_dface(settings.MEDIA_ROOT_URL + imageURL)
+            opencv_thermal(settings.MEDIA_ROOT_URL + imageURL)
 
             return render(request, 'opencv_webapp/dface.html', {'form': form, 'post': post})
     else:
