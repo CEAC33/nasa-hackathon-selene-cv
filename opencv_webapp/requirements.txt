@@ -4,7 +4,7 @@ Django==2.0.6
 Pillow==5.1.0
 pytz==2018.4
 
-opencv-python==3.4.2.16
+opencv-python==3.4.7.28
 numpy>=1.14.5
 
 #numpy==1.14.2
